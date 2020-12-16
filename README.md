@@ -41,7 +41,7 @@ for fileName in list_file:
 ````
 
 ## Trick 4 : load list file in directory
-code example for loading list
+code example for loading list of file in a directory
 ````
 import os 
 
@@ -49,4 +49,36 @@ path = 'directory_name_path'
 files = os.listdir(path)
 for fileName in files:
     print(f)
+````
+
+## Trick 5 :S aving a Text File
+Code example for saving TXT file :
+````
+with open('text_file.txt', 'w') as f:
+    f.write('Text1 to write \n')
+    f.write('Text1 to write \n')
+````
+
+## Trick 6 : Saving Excel file
+Code example for saving pandas dataframe on excel file
+````
+import pandas as pd
+	
+data1 = ["ligne 1", "ligne 2","ligne 3","ligne 4"]
+data2 = [10229,35355,28282,272772,288282]
+
+# Create dataframe in one step
+df = pd.DataFrame({"data1":data1,
+                  "data2":data2})
+
+# write dataframe to excel file
+df.to_excel("data1_data2.xls")
+
+# write dataframe to excel file with no index
+df.to_excel("data1_data2.xls", index=False)
+
+# write dataframe to excel file with sheet name
+df.to_excel("data1_data2.xls", 
+             index=False,
+             sheet_name="data")
 ````
