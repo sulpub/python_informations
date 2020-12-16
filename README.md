@@ -25,3 +25,28 @@ print(file_data.hex())
 
 #OUTPUT : f0ba140ab22006...... in my file example
 ```
+
+## Trick 3 : load list
+code example for loading list
+````
+list_file= {
+'1607700667369',
+'1607700667589',
+'1607700667880'}
+
+bs=b''
+for fileName in list_file:
+    #print(fileName)
+    bs = bs + get_bytes_from_file(fileName)
+````
+
+## Trick 4 : load list file in directory
+code example for loading list
+````
+import os 
+
+path = 'directory_name_path'
+files = os.listdir(path)
+for fileName in files:
+    print(f)
+````
