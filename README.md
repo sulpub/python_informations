@@ -1,6 +1,7 @@
 # python_informations
+____________________________________________________________________________________________________________
 
-## Trick 1 : problem y axis order
+## Trick 1 : Problem for Y axis order with mathplotlib
 
 on mathplotlib, if you have bad order value on the y axis, that mean your data is not number but string.
 
@@ -26,7 +27,7 @@ print(file_data.hex())
 #OUTPUT : f0ba140ab22006...... in my file example
 ```
 
-## Trick 3 : load list
+## Trick 3 : Load a list
 code example for loading list
 ````
 list_file= {
@@ -40,7 +41,7 @@ for fileName in list_file:
     bs = bs + get_bytes_from_file(fileName)
 ````
 
-## Trick 4 : load list file in directory
+## Trick 4 : Load list file in directory
 code example for loading list of file in a directory
 ````
 import os 
@@ -51,7 +52,7 @@ for fileName in files:
     print(f)
 ````
 
-## Trick 5 :S aving a Text File
+## Trick 5 : Saving a Text File
 Code example for saving TXT file :
 ````
 with open('text_file.txt', 'w') as f:
@@ -82,3 +83,16 @@ df.to_excel("data1_data2.xls",
              index=False,
              sheet_name="data")
 ````
+
+## Trick - : Comments in python
+
+In python for comment expression, you can adapt these examples
+```
+# Comment one line in python
+
+"""
+Command a block expression
+on multi line
+"""
+```
+
