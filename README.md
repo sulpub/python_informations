@@ -84,7 +84,7 @@ df.to_excel("data1_data2.xls",
              sheet_name="data")
 ````
 
-## Trick - : Comments in python
+## Trick 7 : Comments in python
 
 In python for comment expression, you can adapt these examples
 ```
@@ -96,3 +96,34 @@ on multi line
 """
 ```
 
+## Trick 8 : timestamp in ms for plot with date
+```
+import matplotlib.pyplot as plt
+import matplotlib.dates as md
+import matplotlib.ticker as ticker
+import numpy as np
+import datetime as dt
+import time
+
+#timestamp ms conversion
+print("Timestamps now (ms)")
+timestamp_now=int(round(time.time() * 1000))
+print(timestamp_now)
+
+#Extraction timestamp ms to date time
+dt_object = datetime.fromtimestamp(timestamp_now/1000)
+print("dt_object =", dt_object)
+print("type(dt_object) =", type(dt_object))
+
+#Conversion pandas dataframe with Time=Timestamps in ms for marking in plot
+dates=[dt.datetime.fromtimestamp(ts/1000) for ts in data_matrix_pandas["Time"]]
+print(dates)
+
+#plotting datas
+plt.plot(dates[1:],data_matrix_pandas["Data"][1:], 'bo-')
+plt.title('Title plot')
+plt.xlabel('Label X axis')
+plt.ylabel('Label Y axis')
+axes.set_ylim([0, 1.5])
+plt.show()
+```
